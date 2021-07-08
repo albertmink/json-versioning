@@ -5,11 +5,15 @@
     "ver1": {
       "type": "object",
       "properties": {
+        "version": {
+          "type": "number"
+        },
         "field1": {
           "type": "string",
           "pattern": "11"
         }
       },
+      "additionalProperties": false,
       "required": ["field1"]
     },
     "ver2": {
@@ -30,6 +34,7 @@
           "pattern": "Uknown Schema Version"
         }
       },
+      "additionalProperties": false,
       "required": ["unknownVersion"]
     }
   },
