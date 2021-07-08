@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "definitions": {
+    "ver1": {
+      "type": "object",
+      "properties": {
+        "field1": {
+          "type": "string",
+          "pattern": "11"
+        }
+      },
+      "required": ["field1"]
+    },
+    "ver2": {
+      "type": "object",
+      "properties": {
+        "field2": {
+          "type": "string",
+          "pattern": "2"
+        }
+      },
+      "required": ["field2"]
+    },
+    "unknown": {
+      "type": "object",
+      "properties": {
+        "unknownVersion": {
+          "type": "string",
+          "pattern": "Uknown Schema Version"
+        }
+      },
+      "required": ["unknownVersion"]
+    }
+  },
+  "properties": {
+    "version": {
+      "type": "number"
+    }
+  },
+  "if": {
+    "properties": {
+      "version": {
+        "const": 1
+      }
+    }
+  },
+  "then": {
+    "$ref": "#/definitions/ver1"
+  },
+  "else": {
+    "if": {
+      "properties": {
+        "version": {
+          "const": 2
+        }
+      }
+    },
+    "then": {
+      "$ref": "#/definitions/ver2"
+    },
+    "else": {
+      "$ref": "#/definitions/unknown"
+    }
+  }
+}

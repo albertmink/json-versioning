@@ -1,0 +1,5 @@
+{
+  "$schema": "./schema.json",
+  "version": 123,
+  "field2": "22"
+}

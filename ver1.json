@@ -1,0 +1,6 @@
+{
+  "$schema": "./schema.json",
+  "version": 1,
+  "postal_code": "12345",
+  "field1": "11"
+}
