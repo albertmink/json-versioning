@@ -6,9 +6,11 @@
       "type": "object",
       "properties": {
         "version": {
+          "title": "The file format version",
           "type": "number"
         },
         "field1": {
+          "title": "Field of Schema 1",
           "type": "string",
           "pattern": "11"
         }
